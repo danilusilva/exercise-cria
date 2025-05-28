@@ -5,7 +5,7 @@ export default function BotaoVoltar({ to = -1 }) {
   return (
     <button
       onClick={() => navigate(to)}
-      className="w-16 h-16 flex items-center justify-center rounded-full border-2 border-purple-400 text-purple-400 hover:bg-purple-600 hover:text-white transition"
+      className="w-16 h-16 flex items-center justify-center rounded-full border-2 border-blue-400 text-blue-400 hover:bg-blue-600 hover:text-white transition"
       aria-label="Voltar"
     >
       {/* Chevron Left SVG */}
