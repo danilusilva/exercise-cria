@@ -5,15 +5,14 @@ import { Link } from 'react-router-dom';
 // import Footer from '../components/Footer';
 
 function TalentProfile({ solucoes }) { // Adicionando solucoes como prop
-  // Dados de perfil placeholder
+  // Dados de perfil placeholder - Atualizados para Danilu Silva
   const profileData = {
-    name: 'Danilu Silva', // Placeholder name based on example
-    title: 'Candidate', // Placeholder title
+    name: 'Danilu Silva', // Seu nome
+    title: 'Candidato Full-stack', // Exemplo de título
     profilePicture: '/perfil.jpg', // Definindo o caminho da imagem de perfil
     coverImage: '/path/to/placeholder/cover-image.png', // Placeholder image path
-    about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', // Placeholder about section
-    // Adicionar outros campos de perfil conforme necessário (educação, experiência, portfólios, etc.)
-    skills: ['React', 'Node.js', 'JavaScript', 'CSS'], // Adicionando habilidades
+    about: 'Sou um desenvolvedor apaixonado por criar soluções inovadoras e eficientes. Com experiência em desenvolvimento web e interesse em desafios que me permitam crescer e aplicar minhas habilidades.', // Biografia criada\n    // Adicionar outros campos de perfil conforme necessário (educação, experiência, portfólios, etc.)
+    skills: ['JavaScript', 'React', 'Node.js', 'Python', 'SQL'], // Habilidades atualizadas
     email: 'talento@exemplo.com', // Adicionando email
   };
 
@@ -251,7 +250,7 @@ function TalentProfile({ solucoes }) { // Adicionando solucoes como prop
                     rows="4"
                   />
                 ) : (
-                  <p className="text-gray-300">{aboutText}</p>
+                  <p className="text-gray-300 leading-relaxed">{aboutText}</p>
                 )}
             </div>
 
@@ -264,8 +263,20 @@ function TalentProfile({ solucoes }) { // Adicionando solucoes como prop
                 )}
                 {minhasSolucoes.map((sol, index) => (
                   <li key={index} className="bg-gray-900 border border-blue-600 rounded p-4">
-                    <div className="font-semibold text-white mb-2">Solução para o Desafio ID: {sol.desafioId}</div>
+                    <div className="font-semibold text-white mb-2">{sol.tituloDesafio || `Solução para o Desafio ID: ${sol.desafioId}`}</div>
                     <pre className="whitespace-pre-wrap break-words text-gray-300 text-sm">{sol.solucao}</pre>
+                    {sol.videoPath && (
+                        <div className="mt-2">
+                          <a
+                            href={sol.videoPath}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-400 hover:underline text-sm font-semibold"
+                          >
+                            Ver Vídeo da Solução
+                          </a>
+                        </div>
+                    )}
                   </li>
                 ))}
               </ul>

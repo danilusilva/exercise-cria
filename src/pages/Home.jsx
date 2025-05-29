@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // Ícones SVG simples para os cards
 const EmpresaIcon = () => (
   <svg
-    className="w-8 h-8 text-blue-400 mb-2"
+    className="w-10 h-10 text-blue-400 mb-2"
     fill="none"
     stroke="currentColor"
     strokeWidth="2"
@@ -41,7 +41,7 @@ const TranspIcon = () => (
 // Footer moderno com links sociais fictícios
 function Footer() {
   return (
-    <footer className="bg-gray-950 text-gray-400 py-6 mt-12 border-t border-gray-800">
+    <footer className="bg-gray-950 text-gray-400 py-6 border-t border-gray-800">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 px-4">
         <span>
           © {new Date().getFullYear()} DAVE. Todos os direitos reservados.
@@ -223,6 +223,13 @@ function Home() {
     // Se não estiver logado, o Link navegará para /empresa/login normalmente
   }
 
+  // Dados das empresas parceiras (com logos e nomes completos)
+  const partnerCompanies = [
+    { name: 'Instituto Energisa', logo: '/energisa.png' },
+    { name: 'Link-10', logo: '/link10.png' },
+    { name: 'Hbi financeira', logo: '/hbi.png' },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col">
       {/* Hero */}
@@ -259,63 +266,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Benefícios */}
-      <section className="max-w-5xl mx-auto py-12 px-4 grid md:grid-cols-3 gap-8 animate-fade-in">
-        <div className="bg-gray-800 rounded-lg p-6 shadow-lg hover:scale-105 transition-transform flex flex-col items-center">
-          <EmpresaIcon />
-          <h2 className="text-blue-400 font-bold text-xl mb-2">
-            Para Empresas
-          </h2>
-          <p className="text-gray-300">
-            Receba soluções inovadoras para problemas reais e descubra talentos
-            prontos para o mercado.
-          </p>
-        </div>
-        <div className="bg-gray-800 rounded-lg p-6 shadow-lg hover:scale-105 transition-transform flex flex-col items-center">
-          <DevIcon />
-          <h2 className="text-blue-400 font-bold text-xl mb-2">
-            Para Talentos
-          </h2>
-          <p className="text-gray-300">
-            Enfrente desafios do mundo real, mostre suas habilidades e seja
-            reconhecido por grandes empresas.
-          </p>
-        </div>
-        <div className="bg-gray-800 rounded-lg p-6 shadow-lg hover:scale-105 transition-transform flex flex-col items-center">
-          <TranspIcon />
-          <h2 className="text-blue-400 font-bold text-xl mb-2">
-            Transparência
-          </h2>
-          <p className="text-gray-300">
-            Veja exemplos de desafios e soluções, inspire-se e participe de uma
-            comunidade colaborativa.
-          </p>
-        </div>
-      </section>
-
-      {/* Empresas parceiras */}
-      <section className="max-w-5xl mx-auto py-8 px-4 animate-fade-in-up">
-        <h2 className="text-xl font-bold text-blue-400 mb-4 text-center">
-          Empresas Parceiras
-        </h2>
-        <div className="flex flex-wrap justify-center gap-6">
-          {empresas.map((e, i) => (
-            <div
-              key={i}
-              className={`rounded-lg px-6 py-3 text-white font-bold shadow ${e.cor} bg-opacity-80`}
-            >
-              {e.link ? (
-                <a href={e.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  {e.nome}
-                </a>
-              ) : (
-                e.nome
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Depoimentos */}
       <section className="max-w-5xl mx-auto py-12 px-4 animate-fade-in-up">
         <h2 className="text-2xl font-bold text-blue-400 mb-8 text-center">
@@ -323,6 +273,28 @@ function Home() {
         </h2>
         <DepoimentosCarrossel />
       </section>
+
+      {/* Empresas parceiras (com logos e nomes) */}
+      <section className="py-12">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-blue-400 mb-8">Nossos Clientes</h2>
+          <div className="flex flex-wrap justify-center items-start gap-8 md:gap-16">
+            {partnerCompanies.map((company, index) => (
+              <div key={index} className="flex flex-col items-center w-40 h-auto">
+                <div className="w-40 h-40 flex items-center justify-center mb-2">
+                   <img 
+                    src={company.logo} 
+                    alt={`${company.name} Logo`} 
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+                <p className="text-gray-300 text-base font-semibold text-center">{company.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
