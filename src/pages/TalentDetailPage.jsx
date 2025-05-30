@@ -10,7 +10,7 @@ const talentedCandidates = [
     photo: '/perfil.jpg', // Placeholder: use o caminho da sua foto se estiver em public
     bio: 'Sou um desenvolvedor apaixonado por criar soluções inovadoras e eficientes. Com experiência em desenvolvimento web e interesse em desafios que me permitam crescer e aplicar minhas habilidades.', // Biografia atualizada
      solucoes: [
-        { desafioId: 1, tituloDesafio: 'Desafio hello word em html', solucao: 'Minha solução para o desafio de Hello World...', videoPath: '/videos/meuvideo.mp4' }, // Título do desafio alterado
+        { desafioId: 1, tituloDesafio: 'Desafio hello word em html', solucao: 'Minha solução para o desafio Hello Word!', videoPath: '/videos/meuvideo.mp4' }, // Título do desafio alterado
          // Adicionar soluções de Danilu aqui
      ]
    },
@@ -21,7 +21,7 @@ const talentedCandidates = [
     photo: '/ana.jpeg', // Mulher
     bio: 'Ana é uma desenvolvedora full-stack com paixão por criar aplicações web escaláveis.',
     solucoes: [
-        { desafioId: 1, tituloDesafio: 'Automatizar relatório financeiro', solucao: 'Script Python usando pandas para processar dados e gerar relatório em PDF.' },
+        { desafioId: 1, tituloDesafio: 'Automatizar relatório financeiro', solucao: 'Minha solução para o desafio Hello Word!' },
         // Mais soluções da Ana
     ]
   },

@@ -113,7 +113,10 @@ function TalentProfile({ solucoes }) { // Adicionando solucoes como prop
   };
 
   // Filtrar as soluções enviadas por este 'candidato' (usando o placeholder 'Talento')
-  const minhasSolucoes = solucoes.filter(s => s.candidato === "Talento"); // Usando a prop solucoes
+  const minhasSolucoes = [
+    { desafioId: 1, tituloDesafio: 'Hello World', solucao: 'Minha resolução para o desafio Hello World', videoPath: '/videos/meuvideo.mp4' }, // Exemplo de solução enviada
+    // Adicionar mais soluções aqui
+  ];
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-300">
@@ -129,7 +132,7 @@ function TalentProfile({ solucoes }) { // Adicionando solucoes como prop
           <div className="md:col-span-1 bg-gray-800 rounded-lg p-6 shadow-lg">
             <h2 className="text-xl font-semibold text-blue-400 mb-4">Menu</h2>
             <ul className="space-y-4">
-              <li><Link to="/" className="hover:text-blue-400 transition flex items-center"><svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l7 7m-10 0v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-7 1h14"></path></svg> Dashboard</Link></li>
+              <li><Link to="/" className="hover:text-blue-400 transition flex items-center"><svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l7 7m-10 0v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-7 1h14"></path></svg> Home</Link></li>
               <li><Link to="#" className="hover:text-blue-400 transition flex items-center"><svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg> My Applications</Link></li>
               <li><Link to="/encontrar-desafios" className="hover:text-blue-400 transition flex items-center"><svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg> Encontrar Desafios</Link></li>
               <li><Link to="#" className="hover:text-blue-400 transition flex items-center"><svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m8-10v12m0 0H9"></path></svg> Browse Companies</Link></li>
