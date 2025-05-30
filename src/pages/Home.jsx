@@ -281,7 +281,7 @@ function Home() {
           <div className="flex flex-wrap justify-center items-start gap-8 md:gap-16">
             {partnerCompanies.map((company, index) => (
               <div key={index} className="flex flex-col items-center w-40 h-auto">
-                <div className="w-40 h-40 flex items-center justify-center mb-2">
+                <div className={`w-40 h-40 flex items-center justify-center mb-2 bg-gray-800 rounded-lg p-4`}>
                    <img 
                     src={company.logo} 
                     alt={`${company.name} Logo`} 

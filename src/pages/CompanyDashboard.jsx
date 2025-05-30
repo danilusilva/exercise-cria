@@ -163,7 +163,17 @@ function CompanyDashboard({ desafios, setDesafios, solucoes }) {
         </div>
 
         {/* Seção de Perfil da Empresa (topo) */}
-        <div className="bg-gray-800 rounded-lg shadow-lg p-6 mb-8 flex flex-col md:flex-row items-center md:items-start gap-6">
+        {selectedCompany.coverImage && (
+          <div
+            className="w-full h-48 bg-cover bg-center relative rounded-t-lg"
+            style={{ backgroundImage: `url(${selectedCompany.coverImage})` }}
+          >
+             {/* Optional: Add an overlay for text readability */}
+             <div className="absolute inset-0 bg-black opacity-40 rounded-t-lg"></div>
+          </div>
+        )}
+        
+        <div className={`bg-gray-800 rounded-lg shadow-lg p-6 mb-8 flex flex-col md:flex-row items-center md:items-start gap-6 ${selectedCompany.coverImage ? '-mt-16 relative z-10' : ''}`}>
             {/* Company Logo */}
             <div className="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-blue-500 bg-white flex items-center justify-center">
                <img src={selectedCompany.logo} alt={`${selectedCompany.name} Logo`} className="w-full h-full object-contain" />
